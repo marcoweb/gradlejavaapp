@@ -1,18 +1,21 @@
 package console;
 
-import models.PessoaFisica;
-
 public class Application {
     public static void main(String[] args) {
-        PessoaFisica pf = new PessoaFisica();
-        try {
-            pf.setRegistroFiscal("11144477735");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        Figure figures[] = new Figure[3];
+        figures[0] = new Square();
+        figures[0].setName("Quadrado 1");
+        figures[1] = new Triangle();
+        figures[1].setName("Triângulo 1");
+        figures[2] = new Triangle();
+        figures[2].setName("Triângulo 2");
+        for(Figure fig : figures) {
+            fig.draw();
         }
-        System.out.println(pf.getRegistroFiscal());
-        Figure fig = new Triangle();
-        fig.draw();
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=");
+        for(Figure fig : figures) {
+            fig.drawWithName();
+        }
     }
 }
 
